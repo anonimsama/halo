@@ -1,0 +1,151 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #111;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.typing {
+  font-size: 1.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3s steps(30) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 17ch }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+.start-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeIn 2s 3s forwards;
+  transition: all 0.3s;
+}
+
+.start-btn:hover {
+  background: white;
+  color: #111;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+#gameContainer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+#scoreDisplay {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+canvas {
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 12px rgba(0,255,255,0.3);
+}
+
+#message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: #111;
+}
+
+.btn.show {
+  opacity: 1;
+  animation: fadeIn 1s forwards;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Tombol Kontrol untuk HP */
+#controls {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ctrl-btn {
+  font-size: 6vw;
+  padding: 3vw 4vw;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#direction-buttons {
+  display: flex;
+  gap: 5vw;
+}
+
+@media (min-width: 768px) {
+  #controls {
+    display: none;
+  }
+}

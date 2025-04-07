@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main Sebentar Yuk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="haihai.css" />
+</head>
+<body>
+  <div class="container" id="intro">
+    <div class="typing">main sebentar yuk...</div>
+    <button class="start-btn" onclick="startGame()">Mulai Game</button>
+  </div>
+
+  <div id="gameContainer" class="container">
+    <div id="scoreDisplay">Score: 0</div>
+    <canvas id="tetris" width="240" height="400"></canvas>
+    
+    <div id="controls">
+      <div><button class="ctrl-btn" onclick="playerRotate()">🔄</button></div>
+      <div id="direction-buttons">
+        <button class="ctrl-btn" onclick="playerMove(-1)">⬅️</button>
+        <button class="ctrl-btn" onclick="playerDrop()">⬇️</button>
+        <button class="ctrl-btn" onclick="playerMove(1)">➡️</button>
+      </div>
+    </div>
+
+    <div id="message">
+      Wah... kamu keren banget 😳<br>
+      Klik ini deh 👉 <button class="btn" onclick="window.open('hahaha.html')">💌</button>
+    </div>
+  </div>
+
+  <canvas class="particles"></canvas>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="lofi.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="haihai.js"></script>
+</body>
+</html>
